@@ -11,4 +11,10 @@ public partial class UCMP_ChangeMaster : System.Web.UI.Page
     {
 
     }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        
+        UCMP_MyMaster mymaster = (UCMP_MyMaster)this.Master;
+        mymaster.ChildImage.ImageUrl = "Gremlins.jpg";
+    }
 }

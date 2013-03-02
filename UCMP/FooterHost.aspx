@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="FooterHost.aspx.cs" MasterPageFile="~/UCMP/MyMasterPage.master" Inherits="UCMP_FooterHost" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="FooterHost.aspx.cs" MasterPageFile="~/UCMP/MyMaster.master" Inherits="UCMP_FooterHost" %>
 <%@ Register TagPrefix="apress" TagName="Footer" Src="Footer.ascx" %>
 
 
@@ -10,9 +10,12 @@
             <asp:ListItem>Long Format</asp:ListItem>
             <asp:ListItem>Short Format</asp:ListItem>
         </asp:RadioButtonList>
+
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Save" />
 
         <br />
+
+        <%--<ucl:Footer ID="Footer1" runat="server" /> //from Kelly's code--%>
 
 
         <apress:Footer Format="ShortTime" id="Footer1" runat="server" />
