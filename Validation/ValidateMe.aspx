@@ -128,7 +128,7 @@
                 <td>
                 <!-- Validator(s) for txtPasswd1 here-->
                     
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>   
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" ValidationGroup="LoginGroup" runat="server" ErrorMessage="Please enter a password" Text="*" ControlToValidate="txtPasswd1"></asp:RequiredFieldValidator>   
                 </td>
             </tr>
                 
@@ -143,14 +143,16 @@
                 </td>
                 
                 <td>
-                <!-- Validator(s) for txtPasswd2 here-->                
+                <!-- Validator(s) for txtPasswd2 here-->   
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" ValidationGroup="LoginGroup" runat="server" ErrorMessage="Please re-enter your password" Text="*" ControlToValidate="txtPasswd2"></asp:RequiredFieldValidator> 
+                                 
                 </td>
             </tr>    
             <tr>
                <td>
                </td>
                <td>
-                  <ASP:Button id="btnLogin"                    
+                  <ASP:Button id="btnLogin" ValidationGroup="LoginGroup"                     
                   text="Login" runat="server" />
                </td>
                <td>
@@ -164,7 +166,7 @@
                 <td>
                     <asp:DropDownList id="lstDisplay" 
                     AutoPostBack="true"                     
-                    runat="server" >
+                    runat="server" OnSelectedIndexChanged="lstDisplay_SelectedIndexChanged" >
                             <asp:ListItem Selected ="true">Summary</asp:ListItem>
                             <asp:ListItem>Msg. Box</asp:ListItem>
                     </asp:DropDownList>
@@ -180,7 +182,7 @@
                 <td>
                     <asp:DropDownList id="lstFormat" 
                     AutoPostBack="true"                     
-                    runat="server" >
+                    runat="server" OnSelectedIndexChanged="lstFormat_SelectedIndexChanged" >
                         <asp:ListItem>List</asp:ListItem>
                         <asp:ListItem Selected="true">Bulleted List</asp:ListItem>
                         <asp:ListItem>Single Paragraph</asp:ListItem>
@@ -191,6 +193,7 @@
          <!-- Validation Summary controls here -->
             </div>
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
+        <asp:ValidationSummary ID="ValidationSummary2" runat="server" ValidationGroup="LoginGroup" />
     </form>
 </body>
 </html>
